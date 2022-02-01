@@ -26,7 +26,7 @@ export default class BlogList extends Component {
   render() {
     return (
       <Row>
-        {blogPosts.map((blogPost) => (
+        {this.state.blogPosts.map((blogPost) => (
           <Col md={4} style={{ marginBottom: 50 }}>
             <BlogItem key={blogPost._id} {...blogPost} />
           </Col>
