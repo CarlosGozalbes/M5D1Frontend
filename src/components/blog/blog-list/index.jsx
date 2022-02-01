@@ -7,12 +7,12 @@ export default class BlogList extends Component {
   fetchBlogs = async () => {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL;
-      let response = await fetch(`${apiUrl}/blogsPosts`, {
+      let response = await fetch(`${apiUrl}/blogPosts`, {
         method: "GET",
       });
       if (response.ok) {
         let blogPosts = await response.json();
-        console.log("Blogsposts", blogPosts);
+        console.log("Blogposts", blogPosts);
         this.setState({ blogPosts: blogPosts });
       }
     } catch (error) {
@@ -27,7 +27,7 @@ export default class BlogList extends Component {
     return (
       <Row>
         {blogPosts.map((blogPost) => (
-          <Col  md={4} style={{ marginBottom: 50 }}>
+          <Col md={4} style={{ marginBottom: 50 }}>
             <BlogItem key={blogPost._id} {...blogPost} />
           </Col>
         ))}
