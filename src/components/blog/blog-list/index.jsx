@@ -11,7 +11,7 @@ export default class BlogList extends Component {
         method: "GET",
       });
       if (response.ok) {
-        let blogs = await response.json();
+        let blogPosts = await response.json();
         console.log("Blogsposts", blogPosts);
         this.setState({ blogPosts: blogPosts });
       }
@@ -26,7 +26,7 @@ export default class BlogList extends Component {
   render() {
     return (
       <Row>
-        {blogPosts.map((post) => (
+        {blogPosts.map((blogPost) => (
           <Col  md={4} style={{ marginBottom: 50 }}>
             <BlogItem key={blogPost._id} {...blogPost} />
           </Col>
