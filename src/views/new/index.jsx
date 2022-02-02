@@ -12,7 +12,7 @@ export default function NewBlogPost() {
   const submitForm = async (data) => {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL
-      let response = await fetch(`${apiUrl}/blogs`, {
+      let response = await fetch(`${apiUrl}/blogPosts`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
