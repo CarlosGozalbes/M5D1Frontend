@@ -3,6 +3,9 @@ import { Card } from "react-bootstrap";
 import BlogAuthor from "../blog-author";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import pdfMake from "pdfmake/build/pdfmake";
+
+
 export default class BlogItem extends Component {
   
   
@@ -18,6 +21,9 @@ export default class BlogItem extends Component {
         let response = await fetch(`${apiUrl}/blogPosts/${_id}/downloadPDF`, {
           method: "GET",
         })
+        if (response.ok) {
+         pdfMake.createPdf(response).download();
+        }
         
         
       } catch (error) {
