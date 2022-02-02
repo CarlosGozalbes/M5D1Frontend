@@ -21,6 +21,7 @@ export default class BlogItem extends Component {
         let response = await fetch(`${apiUrl}/blogPosts/${_id}/downloadPDF`, {
           method: "GET",
         })
+        console.log(response)
         if (response.ok) {
          pdfMake.createPdf(response).download();
         }
