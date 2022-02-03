@@ -20,6 +20,7 @@ export default class BlogItem extends Component {
         const apiUrl = process.env.REACT_APP_BE_URL
         let response = await fetch(`${apiUrl}/blogPosts/${_id}/downloadPDF`, {
           method: "GET",
+          mode:"no-cors"
         })
         console.log(response)
         if (response.ok) {
