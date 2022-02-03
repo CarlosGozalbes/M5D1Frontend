@@ -28,10 +28,11 @@ export default function NewBlogPost() {
   }
 
   const onSubmit = (data, e) => {
+    submitForm(data)
     console.log(data)
     e.preventDefault()
     e.target.reset()
-    submitForm(data)
+    
   }
 
   useEffect(() => {
